@@ -4,10 +4,13 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,7 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private LocationManager locationManager;
+    private LocationListener locationListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,12 +60,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        double longitude = location.getLongitude();
-        double latitude = location.getLatitude();
+        final double longitude = location.getLongitude();
+        final double latitude = location.getLatitude();
         LatLng locationz = new LatLng(latitude, longitude);
+        System.out.println(latitude);
+        System.out.println(longitude);
+        //Log.d("Latitude: ", String.valueOf(latitude));
+        //Log.d("Longitude: ", String.valueOf(longitude));
         mMap.addMarker(new MarkerOptions().position(locationz).title("Marker in where u at"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(locationz));
+
+
+
+
+
     }
 
 }

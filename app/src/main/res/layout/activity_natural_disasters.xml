@@ -28,4 +28,13 @@
             android:text="Download result will be shown here"/>
     </RelativeLayout>
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="This page is under developpement. Feel free to write whatever you want here."
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="151dp" />
 </android.support.constraint.ConstraintLayout>
