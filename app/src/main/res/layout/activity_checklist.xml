@@ -9,6 +9,7 @@
     <TableLayout
         android:layout_width="368dp"
         android:layout_height="wrap_content"
+        android:id="@+id/tableView"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
         <TableRow>
@@ -33,6 +34,8 @@
                 android:textColor="#000000"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
+            <CheckBox
+                android:layout_weight="1"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -52,6 +55,8 @@
                 android:textSize="20dp"
                 android:layout_height="40dp"
                 android:textAlignment="center"
+                android:layout_weight="1"/>
+            <CheckBox
                 android:layout_weight="1"/>
         </TableRow>
         <TableRow>
@@ -73,6 +78,8 @@
                 android:layout_height="40dp"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
+            <CheckBox
+                android:layout_weight="1"/>
         </TableRow>
         <TableRow
             android:layout_height="0dp"
@@ -80,24 +87,37 @@
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="0dp">
             <EditText
+                android:id="@+id/add1"
                 android:hint="Item Name"
                 android:textSize="20dp"
                 android:layout_height="40dp"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
             <EditText
+                android:id="@+id/add2"
                 android:hint="Amount"
                 android:textSize="20dp"
                 android:layout_height="40dp"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
             <EditText
+                android:id="@+id/add3"
                 android:hint="Exp. Date"
                 android:textSize="20dp"
                 android:layout_height="40dp"
                 android:textAlignment="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                />
         </TableRow>
     </TableLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="@dimen/fab_margin"
+        android:layout_height="@dimen/fab_margin"
+        android:onClick="addItem"
+        android:src="@drawable/checklist"
+        tools:layout_editor_absoluteY="450dp"
+        tools:layout_editor_absoluteX="350dp"
+        app:fabSize="normal"/>
 
 </android.support.constraint.ConstraintLayout>
