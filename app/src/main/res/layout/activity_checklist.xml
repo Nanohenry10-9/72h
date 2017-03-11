@@ -106,7 +106,7 @@
             android:textSize="18dp"
             android:textColor="#FFF"
             android:background="#007f00"
-            android:layout_height="30dp"
+            android:layout_height="60dp"
             android:text="Add Item"
             android:onClick="addItem"
             android:layout_alignParentBottom="true"
