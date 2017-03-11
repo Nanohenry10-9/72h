@@ -10,7 +10,7 @@ public class natural_disasters extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_natural_disasters);
 
-
+      /* comment */
 
 
 
