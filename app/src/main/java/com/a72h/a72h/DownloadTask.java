@@ -1,9 +1,12 @@
 package com.a72h.a72h;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -11,8 +14,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 
 class DownloadTask extends AsyncTask<String, Integer, String> {
@@ -25,53 +30,72 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
 
     @Override
     protected String doInBackground(String... urls) {
-        InputStream is = null;
+        final AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Internet State");
         String result = "";
         try {
-            URL url = new URL(urls[0]);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.connect();
-            if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                return "Server returned HTTP " + connection.getResponseCode()
-                        + " " + connection.getResponseMessage();
-            }
-            int fileLength = connection.getContentLength();
-            if (fileLength == -1) {
-                return "File length not reported!";
-            }
-            is = connection.getInputStream();
-            //Reader redr = ;
-            //BufferedReader bufRead = new BufferedReader(redr);
-            File nfile = new File(context.getCacheDir().getAbsolutePath() + "/weather.csv");
-            BufferedReader bufRead = new BufferedReader(new FileReader(nfile));
-            byte data[] = new byte[4096];
-            String line = "";
-            String datas[] = {""};
-            while ((line = bufRead.readLine()) != null) {
-                // allow canceling with back button
-                if (isCancelled()) {
-                    is.close();
-                    return "Download cancelled!";
+            try {
+                if (isInternetAvailable()) {
+                    URL url = new URL(urls[0]);
+                    File file = new File(context.getCacheDir() + "/weather.csv");
+
+                    URLConnection urlConnection = url.openConnection();
+                    InputStream inputStream = urlConnection.getInputStream();
+
+                    byte[] buffer = new byte[1024];
+                    int curLength = 0; // You can use current this to update progress bar
+                    int newLength = 0;
+
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+
+                    while ((newLength = inputStream.read(buffer)) > 0) {
+                        curLength += newLength;
+                        byteArrayOutputStream.write(buffer, 0, newLength);
+                    }
+                    FileOutputStream fos = new FileOutputStream(file);
+                    fos.write(byteArrayOutputStream.toByteArray());
+                    fos.close();
+                    //Download has finished
+                    alert.setMessage("Internet Found - Download Successful");
+                    alert.show();
+                } else {
+                    alert.setMessage("No Internet - Download Failed");
+                    alert.show();
                 }
-                // publishing the progress....
-                datas = line.split(";");
-                for (String item : datas) {
-                    result += item;
+
+                // From here on code is related to file reading
+                String path = context.getCacheDir().getAbsolutePath() + "/weather.csv";
+                File nfile = new File(path);
+                if (nfile.exists()) {
+                    BufferedReader br = new BufferedReader(new FileReader(nfile));
+                    String line = "";
+                    try {
+                        while ((line = br.readLine()) != null) {
+                            String[] data = line.split(";");
+                            for (String item : data) {
+                                result += item;
+                            }
+                        }
+                        return result;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    return null;
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
+                //return null;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            result = "Exception: " + e;
         }
-        return result;
+        return null;
     }
 
-    public String byteArrayToString(char[] in) {
-        char out[] = new char[in.length * 2];
-        for (int i = 0; i < in.length; i++) {
-            out[i * 2] = "0123456789ABCDEF".charAt((in[i] >> 4) & 15);
-            out[i * 2 + 1] = "0123456789ABCDEF".charAt(in[i] & 15);
-        }
-        return new String(out);
+    public boolean isInternetAvailable() {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
     }
 }
