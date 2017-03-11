@@ -6,13 +6,45 @@
     android:layout_height="match_parent"
     tools:context="com.a72h.a72h.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="STORM"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="POWER OUTAGE"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="CHECKLIST"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="EVACUATION POINTS"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="FIRST AID"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:text="MAPS"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
