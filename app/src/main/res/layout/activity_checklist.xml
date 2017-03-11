@@ -7,9 +7,10 @@
     tools:context="com.a72h.a72h.checklist">
 
     <RelativeLayout
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content">
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TableLayout
@@ -87,40 +88,15 @@
                     <CheckBox
                         android:layout_weight="1"/>
                 </TableRow>
-                <TableRow
-                    android:layout_height="0dp"
-                    android:layout_width="0dp"
-                    tools:layout_editor_absoluteY="0dp"
-                    tools:layout_editor_absoluteX="0dp">
-                    <EditText
-                        android:id="@+id/add1"
-                        android:hint="Item Name"
-                        android:textSize="20dp"
-                        android:layout_height="40dp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"/>
-                    <EditText
-                        android:id="@+id/add2"
-                        android:hint="Amount"
-                        android:textSize="20dp"
-                        android:layout_height="40dp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"/>
-                    <EditText
-                        android:id="@+id/add3"
-                        android:hint="Exp. Date"
-                        android:textSize="20dp"
-                        android:layout_height="40dp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        />
-                </TableRow>
             </TableLayout>
         </ScrollView>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Item" />
+            android:layout_height="70dp"
+            android:text="Add Item"
+            android:onClick="addItem"
+            android:layout_alignBottom="@+id/scrollView"
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
 
