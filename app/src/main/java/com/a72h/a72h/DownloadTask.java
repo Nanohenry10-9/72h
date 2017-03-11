@@ -3,6 +3,8 @@ package com.a72h.a72h;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import java.net.URL;
+
 
 class DownloadTask extends AsyncTask<String, Integer, String> {
 
@@ -12,8 +14,10 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
         this.context = context;
     }
     @Override
-    protected String doInBackground(String... url) {
-        String result = url[0];
+    protected String doInBackground(String... urls) {
+        String result = "";
+        String url = urls[0];
+
         return result;
     }
 }
