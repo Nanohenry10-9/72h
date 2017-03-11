@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void meetingPoints(View view) {
-        //Intent intent = new Intent(this, checklist.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, MeetingActivity.class);
+        startActivity(intent);
     }
 
     public void maps(View view) {

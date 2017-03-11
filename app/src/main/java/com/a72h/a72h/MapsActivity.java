@@ -61,22 +61,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(lux).title("Marker in Lux"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
 
-        /*
+        /*  Just in case this works  */
 
-        Just in case this works
-
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        final double longitude = location.getLongitude();
-        final double latitude = location.getLatitude();
-        LatLng lux = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(lux).title("Marker at your location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
-        */
-
-        // Add a marker in Sydney and move the camera
-        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+       /* LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
 
             return;
         }
@@ -84,13 +72,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         final double longitude = location.getLongitude();
         final double latitude = location.getLatitude();
-       // LatLng lux = new LatLng(latitude, longitude);
-        //System.out.println(latitude);
-        //System.out.println(longitude);
-        //Log.d("Latitude: ", String.valueOf(latitude));
-        //Log.d("Longitude: ", String.valueOf(longitude));
-        mMap.addMarker(new MarkerOptions().position(lux).title("Marker at your location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
+        LatLng luxe = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(luxe).title("Marker at your location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(luxe));
+        */
+
+
+        // Add a marker in Sydney and move the camera
+        //lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+
 
        // Location mLastLocation = Location.FusedLocationApi.getLastLocation(
                // mGoogleApiClient);
