@@ -6,5 +6,26 @@
     android:layout_height="match_parent"
     tools:context="com.a72h.a72h.natural_disasters">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="Download File"
+            android:gravity="center"
+            android:id="@+id/downloadButton"
+            android:onClick="downloadFile"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@id/downloadButton"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/TV"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Download result will be shown here"/>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
