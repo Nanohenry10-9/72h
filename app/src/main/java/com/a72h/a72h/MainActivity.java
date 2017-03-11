@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void firstAid(View view) {
-        //Intent intent = new Intent(this, checklist.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, firstaid.class);
+        startActivity(intent);
     }
 
 }

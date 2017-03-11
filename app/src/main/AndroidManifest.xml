@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".natural_disasters" />
         <activity android:name=".checklist" />
+        <activity android:name=".firstaid" />
     </application>
 
 </manifest>
