@@ -12,12 +12,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.common.api.GoogleApiClient.Builder;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -32,6 +34,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //if (mGoogleApiClient == null) {
+          //  mGoogleApiClient = new GoogleApiClient.Builder(this)
+          //          .addConnectionCallbacks(this)
+          //          .addOnConnectionFailedListener(this)
+          //          .addApi(LocationServices.API)
+           //         .build();
     }
 
 
@@ -48,34 +57,63 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        LatLng lux = new LatLng(49.600508, 6.113629);
+        mMap.addMarker(new MarkerOptions().position(lux).title("Marker in Lux"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
+
+        /*
+
+        Just in case this works
+
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        final double longitude = location.getLongitude();
+        final double latitude = location.getLatitude();
+        LatLng lux = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(lux).title("Marker at your location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
+        */
+
         // Add a marker in Sydney and move the camera
         LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
+
             return;
         }
 
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         final double longitude = location.getLongitude();
         final double latitude = location.getLatitude();
-        LatLng locationz = new LatLng(latitude, longitude);
-        System.out.println(latitude);
-        System.out.println(longitude);
+       // LatLng lux = new LatLng(latitude, longitude);
+        //System.out.println(latitude);
+        //System.out.println(longitude);
         //Log.d("Latitude: ", String.valueOf(latitude));
         //Log.d("Longitude: ", String.valueOf(longitude));
-        mMap.addMarker(new MarkerOptions().position(locationz).title("Marker in where u at"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(locationz));
+        mMap.addMarker(new MarkerOptions().position(lux).title("Marker at your location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(lux));
+
+       // Location mLastLocation = Location.FusedLocationApi.getLastLocation(
+               // mGoogleApiClient);
+          //  mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
+          //  mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
 
 
+    /*    public class MainActivity extends ActionBarActivity implements
+                ConnectionCallbacks, OnConnectionFailedListener {
+    ...
+            @Override
+            public void onConnected(Bundle connectionHint) {
+                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                        mGoogleApiClient);
+                if (mLastLocation != null) {
+                    mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
+                    mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
+                }
+            }*/
+        }
 
 
 
     }
 
-}
+
