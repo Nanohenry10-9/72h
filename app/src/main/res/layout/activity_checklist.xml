@@ -8,29 +8,29 @@
 
     <TableLayout
         android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
         <TableRow>
             <TextView
                 android:text="Item"
                 android:textSize="20dp"
                 android:layout_height="40dp"
-                android:textColor="FF0000"
+                android:textColor="#000000"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
             <TextView
                 android:text="Amount"
                 android:textSize="20dp"
                 android:layout_height="40dp"
-                android:textColor="FF0000"
+                android:textColor="#000000"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
             <TextView
                 android:text="Exp. Date"
                 android:textSize="20dp"
                 android:layout_height="40dp"
-                android:textColor="FF0000"
+                android:textColor="#000000"
                 android:textAlignment="center"
                 android:layout_weight="1"/>
         </TableRow>
@@ -69,6 +69,30 @@
                 android:layout_weight="1"/>
             <TextView
                 android:text="05.01.2018"
+                android:textSize="20dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp">
+            <EditText
+                android:hint="Item Name"
+                android:textSize="20dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+            <EditText
+                android:hint="Amount"
+                android:textSize="20dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_weight="1"/>
+            <EditText
+                android:hint="Exp. Date"
                 android:textSize="20dp"
                 android:layout_height="40dp"
                 android:textAlignment="center"
