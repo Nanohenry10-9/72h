@@ -2,5 +2,7 @@
     <string name="app_name">72h</string>
     <string name="title_activity_checklist">checklist</string>
     <string name="title_activity_maps">Map</string>
+    <string name="connection_error">Unable to load content. Check your network connection.</string>
+    <string name="xml_error">Error parsing XML.</string>
     <string name="title_activity_meeting">Sample Text</string>
 </resources>
