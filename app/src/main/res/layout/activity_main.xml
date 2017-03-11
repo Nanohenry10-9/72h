@@ -33,14 +33,14 @@
             <Button
                 android:id="@+id/button"
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_disaster"
                 android:onClick="naturalDisasters" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_flash"
                 android:onClick="powerOutage" />
@@ -52,14 +52,14 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_checklist"
                 android:onClick="checklist" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_meet"
                 android:onClick="meetingPoints" />
@@ -71,14 +71,14 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_aid"
                 android:onClick="firstAid"/>
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_map"
                 android:onClick="maps" />
