@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".natural_disasters" />
+        <activity android:name=".checklist"></activity>
     </application>
 
 </manifest>
