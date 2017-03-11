@@ -15,6 +15,8 @@ public class natural_disasters extends AppCompatActivity {
     }
 
     public void downloadFile(View view) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         DownloadTask download = new DownloadTask(view.getContext());
         TextView tv = (TextView) findViewById(R.id.TV);
         String text = download.doInBackground("http://meteolux.lu/Opendata/data_alerts.csv");
