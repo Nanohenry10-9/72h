@@ -4,24 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.a72h.a72h.MainActivity">
-
+    android:layout_marginEnd="0dp"
+    app:layout_constraintRight_toRightOf="@+id/tableLayout">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
     <TableLayout
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <!--app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
-        <TableRow>
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tableLayout"
+        android:layout_marginEnd="8dp"-->
+
+        <TableRow
+            android:layout_height="fill_parent"
+            android:layout_width="0dp">
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_weight="1"
+                android:background="@drawable/disaster"
                 android:onClick="naturalDisasters"
                 android:text="STORM" />
 
@@ -29,37 +43,53 @@
                 android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_weight="1"
+                android:background="@drawable/flash"
                 android:onClick="powerOutage"
                 android:text="POWER OUTAGE" />
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_height="fill_parent"
+            android:layout_width="0dp">
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:text="CHECKLIST"
                 android:layout_weight="1"
-                android:onClick="checklist"/>
+                android:background="@drawable/checklist"
+                android:onClick="checklist"
+                android:text="CHECKLIST" />
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:text="EVACUATION POINTS"
                 android:layout_weight="1"
-                android:onClick="meetingPoints"/>
+                android:background="@drawable/meet"
+                android:onClick="meetingPoints"
+                android:text="EVACUATION POINTS" />
         </TableRow>
-        <TableRow>
+
+        <TableRow
+            android:layout_height="fill_parent"
+            android:layout_width="0dp">
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:text="FIRST AID"
                 android:layout_weight="1"
-                android:onClick="firstAid"/>
+                android:background="@drawable/aid"
+                android:onClick="firstAid"
+                android:text="FIRST AID" />
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:text="MAPS"
                 android:layout_weight="1"
-                android:onClick="maps"/>
+                android:background="@drawable/map"
+                android:onClick="maps"
+                android:text="MAPS" />
         </TableRow>
     </TableLayout>
-
+    </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
