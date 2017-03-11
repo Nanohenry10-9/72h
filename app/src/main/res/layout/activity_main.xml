@@ -7,23 +7,30 @@
     tools:context="com.a72h.a72h.MainActivity">
 
     <TableLayout
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="368dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
         <TableRow>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:onClick="naturalDisasters"
+                android:text="STORM" />
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:text="STORM"
                 android:layout_weight="1"
-                android:onClick="naturalDisasters"/>
-            <Button     
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:text="POWER OUTAGE"
-                android:layout_weight="1"
-                android:onClick="powerOutage"/>
+                android:onClick="powerOutage"
+                android:text="POWER OUTAGE" />
         </TableRow>
         <TableRow>
             <Button
