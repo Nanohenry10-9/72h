@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.a72h.a72h.natural_disasters">
 
+
+    <TextView
+        android:id="@+id/textV"
+        android:layout_width="254dp"
+        android:layout_height="115dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="46dp" />
 </android.support.constraint.ConstraintLayout>

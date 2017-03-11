@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public void naturalDisasters(View view) {
         Intent intent = new Intent(this, natural_disasters.class);
         startActivity(intent);
+
     }
 
     public void checklist(View view) {
