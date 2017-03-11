@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".natural_disasters" />
-        <activity android:name=".checklist"></activity>
+        <activity android:name=".checklist" />
     </application>
 
 </manifest>
