@@ -28,27 +28,53 @@ public class natural_disasters extends AppCompatActivity {
         DownloadTask download = new DownloadTask(view.getContext());
         TextView tv = (TextView) findViewById(R.id.TV);
         String text[] = download.doInBackground("http://meteolux.lu/Opendata/data_alerts.csv");
-        tv.setText(text.toString());
-
-        TextView row1[] = {};
-        row1[0] = (TextView) findViewById(R.id.col1);
-        row1[1] = (TextView) findViewById(R.id.col2);
-        row1[2] = (TextView) findViewById(R.id.col3);
-        row1[3] = (TextView) findViewById(R.id.col4);
-        row1[4] = (TextView) findViewById(R.id.col5);
-        row1[5] = (TextView) findViewById(R.id.col6);
-        row1[6] = (TextView) findViewById(R.id.col7);
-        row1[7] = (TextView) findViewById(R.id.col8);
-        row1[8] = (TextView) findViewById(R.id.col9);
-        row1[9] = (TextView) findViewById(R.id.col10);
+        String textColor = "#000000";
         try {
-            for (int i = 0; i < 10; i++) {
-                row1[i].setText(text[i]);
+            int tvCount = 10;
+            TextView[] row1 = new TextView[10];
+            row1[0] = (TextView) findViewById(R.id.col1);
+            row1[1] = (TextView) findViewById(R.id.col2);
+            row1[2] = (TextView) findViewById(R.id.col3);
+            row1[3] = (TextView) findViewById(R.id.col4);
+            row1[4] = (TextView) findViewById(R.id.col5);
+            row1[5] = (TextView) findViewById(R.id.col6);
+            row1[6] = (TextView) findViewById(R.id.col7);
+            row1[7] = (TextView) findViewById(R.id.col8);
+            row1[8] = (TextView) findViewById(R.id.col9);
+            row1[9] = (TextView) findViewById(R.id.col10);
+            if (text[5].equals("green")) {
+                textColor = "#008000";
+                tv.setText("No Warnings!");
+                tv.setTextColor(Color.parseColor("#008000"));
+            } else if (text[5].equals("yellow")) {
+                textColor = "#FFFF00";
+                tv.setText("Level yellow: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FFFF00"));
+            } else if (text[5].equals("orange")) {
+                textColor = "#FF7F50";
+                tv.setText("Level orange: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FF7F50"));
+            } else if (text[5].equals("red")) {
+                textColor = "#FF0000";
+                tv.setText("Level red: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FF0000"));
             }
+            for (int i = 0; i < tvCount; i++) {
+                if (text[i].equals("true")) {
+                    row1[i].setText("YES");
+                } else if (text[i].equals("false")) {
+                    row1[i].setText("NO");
+                } else if (text[i].equals("")) {
+                    row1[i].setText(" ");
+                } else {
+                    row1[i].setText(text[i].toUpperCase());
+                }
+                row1[i].setTextColor(Color.parseColor(textColor));
+            }
+
         } catch (Exception e) {
             tv.setText("Error: " + e);
         }
-        //col2row1.setText(text[1]);
     }
 
 }
