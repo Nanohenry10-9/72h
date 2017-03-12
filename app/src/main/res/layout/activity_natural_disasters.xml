@@ -7,27 +7,29 @@
     tools:context="com.a72h.a72h.natural_disasters">
 
     <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
         <Button
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:text="Download File"
             android:gravity="center"
             android:id="@+id/downloadButton"
-            android:onClick="downloadFile"/>
+            android:onClick="downloadFile"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_alignBottom="@id/downloadButton"
             android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/TV"
             android:gravity="center"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:text="Download result will be shown here"/>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

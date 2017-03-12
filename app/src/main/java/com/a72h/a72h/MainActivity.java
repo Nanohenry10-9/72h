@@ -44,4 +44,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void nuclear(View view) {
+        Intent intent = new Intent(this, nuclear.class);
+        startActivity(intent);
+    }
+
+
 }

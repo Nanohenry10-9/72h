@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.a72h.a72h.powerOutage">
 
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/WebView">
-
-    </WebView>
-
+    <RelativeLayout
+        android:layout_width="416dp"
+        android:layout_height="671dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/WebView">
+        </WebView>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

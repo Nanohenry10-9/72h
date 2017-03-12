@@ -84,6 +84,14 @@
                 android:background="@drawable/ic_map"
                 android:onClick="maps" />
         </TableRow>
+        <TableRow>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:text="Nuclear Info"
+                android:onClick="nuclear" />
+        </TableRow>
     </TableLayout>
     </LinearLayout>
     </LinearLayout>

@@ -75,6 +75,7 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
                             for (String item : data) {
                                 result += item;
                             }
+                            result += "\n";
                         }
                         return result;
                     } catch (Exception e) {
