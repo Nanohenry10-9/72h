@@ -25,35 +25,57 @@
             android:layout_below="@id/downloadButton">
             <TableRow>
                 <TextView
-                    android:id="@+id/col1"
-                    android:text="col1"/>
+                    android:text="North "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col2"
-                    android:text="col2"/>
+                    android:text="South "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col3"
-                    android:text="col3"/>
+                    android:text="Legend "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col4"
-                    android:text="col4"/>
+                    android:text="Desc. "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col5"
-                    android:text="col5"/>
+                    android:text="Value "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col6"
-                    android:text="col6"/>
+                    android:text="Colour "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col7"
-                    android:text="col7"/>
+                    android:text="Icon "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col8"
-                    android:text="col8"/>
+                    android:text="Link "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col9"
-                    android:text="col9"/>
+                    android:text="Start "
+                    android:textColor="#000000"/>
                 <TextView
-                    android:id="@+id/col10"
-                    android:text="col10"/>
+                    android:text="End "
+                    android:textColor="#000000"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/col1"/>
+                <TextView
+                    android:id="@+id/col2"/>
+                <TextView
+                    android:id="@+id/col3"/>
+                <TextView
+                    android:id="@+id/col4"/>
+                <TextView
+                    android:id="@+id/col5"/>
+                <TextView
+                    android:id="@+id/col6"/>
+                <TextView
+                    android:id="@+id/col7"/>
+                <TextView
+                    android:id="@+id/col8"/>
+                <TextView
+                    android:id="@+id/col9"/>
+                <TextView
+                    android:id="@+id/col10"/>
             </TableRow>
             <TableRow>
 
