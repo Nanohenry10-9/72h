@@ -12,23 +12,65 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:text="Download File"
+            android:text="Load File"
             android:gravity="center"
             android:id="@+id/downloadButton"
             android:onClick="downloadFile"
             android:layout_marginTop="10dp"/>
 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/table"
+            android:layout_below="@id/downloadButton">
+            <TableRow>
+                <TextView
+                    android:id="@+id/col1"
+                    android:text="col1"/>
+                <TextView
+                    android:id="@+id/col2"
+                    android:text="col2"/>
+                <TextView
+                    android:id="@+id/col3"
+                    android:text="col3"/>
+                <TextView
+                    android:id="@+id/col4"
+                    android:text="col4"/>
+                <TextView
+                    android:id="@+id/col5"
+                    android:text="col5"/>
+                <TextView
+                    android:id="@+id/col6"
+                    android:text="col6"/>
+                <TextView
+                    android:id="@+id/col7"
+                    android:text="col7"/>
+                <TextView
+                    android:id="@+id/col8"
+                    android:text="col8"/>
+                <TextView
+                    android:id="@+id/col9"
+                    android:text="col9"/>
+                <TextView
+                    android:id="@+id/col10"
+                    android:text="col10"/>
+            </TableRow>
+            <TableRow>
+
+            </TableRow>
+        </TableLayout>
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="200dp"
             android:layout_alignBottom="@id/downloadButton"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
+            android:padding="20dp"
             android:id="@+id/TV"
             android:gravity="center"
-            android:textAlignment="textStart"
             android:textSize="10dp"
             android:text="Download result will be shown here"/>
     </RelativeLayout>

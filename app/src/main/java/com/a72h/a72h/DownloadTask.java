@@ -19,8 +19,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import static android.R.attr.data;
 
-class DownloadTask extends AsyncTask<String, Integer, String> {
+
+class DownloadTask extends AsyncTask<String, Integer, String[]> {
 
     private Context context;
 
@@ -29,10 +31,10 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
     }
 
     @Override
-    protected String doInBackground(String... urls) {
+    protected String[] doInBackground(String... urls) {
         final AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Internet State");
-        String result = "";
+        String result[] = {""};
         try {
             try {
                 if (isInternetAvailable()) {
@@ -69,15 +71,12 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
                 if (nfile.exists()) {
                     BufferedReader br = new BufferedReader(new FileReader(nfile));
                     String line = "";
+                    String[] result2 = {""};
                     try {
                         while ((line = br.readLine()) != null) {
-                            String[] data = line.split(";");
-                            for (String item : data) {
-                                result += item;
-                            }
-                            result += "\n";
+                            result2 = line.split(";");
                         }
-                        return result;
+                        return result2;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
