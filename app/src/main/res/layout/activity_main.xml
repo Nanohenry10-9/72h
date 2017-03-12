@@ -31,19 +31,21 @@
             android:layout_width="0dp"
             android:layout_marginTop="20dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button"
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_disaster"
+                android:src="@drawable/ic_disaster"
+                android:background="#FFF"
                 android:onClick="naturalDisasters" />
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_information"
+                android:src="@drawable/ic_information"
+                android:background="#FFF"
                 android:onClick="powerOutage" />
         </TableRow>
 
@@ -51,18 +53,20 @@
             android:layout_height="fill_parent"
             android:layout_width="0dp">
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_checklist"
+                android:src="@drawable/ic_checklist"
+                android:background="#FFF"
                 android:onClick="checklist" />
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_meet"
+                android:src="@drawable/ic_meet"
+                android:background="#FFF"
                 android:onClick="meetingPoints" />
         </TableRow>
 
@@ -70,24 +74,26 @@
             android:layout_height="fill_parent"
             android:layout_width="0dp">
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_aid"
+                android:src="@drawable/ic_aid"
+                android:background="#FFF"
                 android:onClick="firstAid"/>
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_map"
+                android:src="@drawable/ic_map"
+                android:background="#FFF"
                 android:onClick="maps" />
         </TableRow>
         <TableRow>
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
                 android:text="Nuclear Info"
                 android:onClick="nuclear" />
