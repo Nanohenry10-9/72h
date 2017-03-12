@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nuclear(View view) {
-        Intent intent = new Intent(this, nuclear.class);
+        Intent intent = new Intent(this, checklist.class); // Class name?
         startActivity(intent);
     }
 
