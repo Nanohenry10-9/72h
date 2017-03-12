@@ -3,20 +3,7 @@ package com.a72h.a72h;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import android.content.Intent;
-
-import android.view.View;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.TextView;
-import android.os.StrictMode;
 
 import android.os.AsyncTask;
 import com.a72h.a72h.firstaid_parser.Entry;
@@ -37,11 +24,6 @@ public class firstaid extends AppCompatActivity {
 
     // All static variables
     static final String URL = "http://www.pharmacie.lu/flux_rss.xml";
-
-    // XML node keys
-    static final String KEY_NAME = "name";
-    // static final String KEY_COST = "type"; // Hospital or Pharmacy
-    static final String KEY_DESC = "description";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +78,7 @@ public class firstaid extends AppCompatActivity {
             }
         }
 
+        htmlString.append("<h2>Pharmacy on Call</h2>");
         for (Entry entry : entries) {
             htmlString.append("<h3>");
             htmlString.append(entry.title);

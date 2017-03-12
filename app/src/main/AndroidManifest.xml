@@ -59,6 +59,7 @@
             android:name=".MeetingActivity"
             android:label="@string/title_activity_meeting" />
         <activity android:name=".powerOutage"></activity>
+        <activity android:name=".nuclear_emergency"></activity>
     </application>
 
 </manifest>
