@@ -31,19 +31,20 @@
             android:layout_width="0dp"
             android:layout_marginTop="20dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_disaster"
+                android:src="@drawable/ic_disaster"
+                android:background="#FFF"
                 android:onClick="naturalDisasters" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_flash"
+                android:background="@drawable/ic_information"
                 android:onClick="powerOutage" />
         </TableRow>
 
