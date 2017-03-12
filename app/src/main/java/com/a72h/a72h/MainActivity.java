@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void powerOutage(View view) {
-        //Intent intent = new Intent(this, checklist.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, powerOutage.class);
+        startActivity(intent);
     }
 
     public void firstAid(View view) {

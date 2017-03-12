@@ -51,13 +51,14 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".firstaid"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MeetingActivity"
-            android:label="@string/title_activity_meeting"></activity>
+            android:label="@string/title_activity_meeting" />
+        <activity android:name=".powerOutage"></activity>
     </application>
 
 </manifest>

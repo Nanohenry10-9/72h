@@ -1,6 +1,7 @@
 package com.a72h.a72h;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,12 @@ public class checklist extends AppCompatActivity {
     }
 
     public void addItem(View view) {
+        Intent calendarIntent = new Intent(Intent.ACTION_EDIT);
+        calendarIntent.setType("vnd.android.cursor.item/event");
+        calendarIntent.putExtra("description", "72h: Check expiration date of [Insert you item here]");
+        calendarIntent.putExtra("title", "[Enter title here]");
+        calendarIntent.putExtra("allDay", true);
+        startActivity(calendarIntent);
         EditText ed1 = new EditText(view.getContext());
         EditText ed2 = new EditText(view.getContext());
         EditText ed3 = new EditText(view.getContext());

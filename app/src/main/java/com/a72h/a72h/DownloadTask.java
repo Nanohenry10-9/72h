@@ -56,10 +56,10 @@ class DownloadTask extends AsyncTask<String, Integer, String> {
                     fos.write(byteArrayOutputStream.toByteArray());
                     fos.close();
                     //Download has finished
-                    alert.setMessage("Internet Found - Download Successful");
+                    alert.setMessage("Internet Found - Download Successful\n\nFile has been downloaded to " + context.getCacheDir() + "/weather.csv");
                     alert.show();
                 } else {
-                    alert.setMessage("No Internet - Download Failed");
+                    alert.setMessage("No Internet - Download Failed\n\nFile is being retreived from " + context.getCacheDir() + "/weather.csv");
                     alert.show();
                 }
 
