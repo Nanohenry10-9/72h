@@ -38,7 +38,8 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_disaster"
                 android:background="#FFF"
-                android:onClick="naturalDisasters" />
+                android:onClick="naturalDisasters"
+                android:scaleType="fitCenter"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -46,7 +47,8 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_information"
                 android:background="#FFF"
-                android:onClick="powerOutage" />
+                android:onClick="powerOutage"
+                android:scaleType="fitCenter"/>
         </TableRow>
 
         <TableRow
@@ -59,7 +61,8 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_checklist"
                 android:background="#FFF"
-                android:onClick="checklist" />
+                android:onClick="checklist"
+                android:scaleType="fitCenter" />
 
             <ImageButton
                 android:layout_width="0dp"
@@ -67,7 +70,8 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_meet"
                 android:background="#FFF"
-                android:onClick="meetingPoints" />
+                android:onClick="meetingPoints"
+                android:scaleType="fitCenter" />
         </TableRow>
 
         <TableRow
@@ -80,7 +84,8 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_aid"
                 android:background="#FFF"
-                android:onClick="firstAid"/>
+                android:onClick="firstAid"
+                android:scaleType="fitCenter"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -88,15 +93,18 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_map"
                 android:background="#FFF"
-                android:onClick="maps" />
+                android:onClick="maps"
+                android:scaleType="fitCenter" />
         </TableRow>
         <TableRow>
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="110dp"
                 android:layout_weight="1"
-                android:text="Nuclear Info"
-                android:onClick="nuclear" />
+                android:src="@drawable/ic_nuclear"
+                android:background="#ff0000"
+                android:onClick="nuclear"
+                android:scaleType="fitCenter"/>
         </TableRow>
     </TableLayout>
     </LinearLayout>
