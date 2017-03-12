@@ -28,7 +28,6 @@ public class natural_disasters extends AppCompatActivity {
         DownloadTask download = new DownloadTask(view.getContext());
         TextView tv = (TextView) findViewById(R.id.TV);
         String text[] = download.doInBackground("http://meteolux.lu/Opendata/data_alerts.csv");
-        tv.setText(text.toString());
         String textColor = "#000000";
         try {
             int tvCount = 10;
@@ -45,12 +44,20 @@ public class natural_disasters extends AppCompatActivity {
             row1[9] = (TextView) findViewById(R.id.col10);
             if (text[5].equals("green")) {
                 textColor = "#008000";
+                tv.setText("No Warnings!");
+                tv.setTextColor(Color.parseColor("#008000"));
             } else if (text[5].equals("yellow")) {
                 textColor = "#FFFF00";
+                tv.setText("Level yellow: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FFFF00"));
             } else if (text[5].equals("orange")) {
                 textColor = "#FF7F50";
+                tv.setText("Level orange: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FF7F50"));
             } else if (text[5].equals("red")) {
                 textColor = "#FF0000";
+                tv.setText("Level red: " + text[3]);
+                tv.setTextColor(Color.parseColor("#FF0000"));
             }
             for (int i = 0; i < tvCount; i++) {
                 if (text[i].equals("true")) {
@@ -68,7 +75,6 @@ public class natural_disasters extends AppCompatActivity {
         } catch (Exception e) {
             tv.setText("Error: " + e);
         }
-        //col2row1.setText(text[1]);
     }
 
 }
